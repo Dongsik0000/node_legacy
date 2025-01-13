@@ -5,6 +5,8 @@ const port = 3000
 
 app.set('view engine', 'ejs')
 app.set('views', './views')
+// static file erving
+app.use(express.static(__dirname+'/public')) // 정적 파일이 위치한 Directory
 
 app.get('/', (req, res) => {
   res.render('index')
