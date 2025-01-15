@@ -1,26 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-  </head>
-  <body>
-    <h1>홈페이지에 오신 것을 환영합니다.</h1>
-    <header
-      style="
-        border-bottom: 1px solid lightgray;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-      "
-    >
-      <nav>
-        <a href="/">홈</a>
-        <a href="/profile">프로필</a>
-        <a href="/visit">찾아오시는길</a>
-        <a href="/blog">블로그</a>
-        <a href="/users">회원</a>
-        <a href="/contact">문의하기</a>
-        <a href="/contactList">문의목록보기</a>
-      </nav>
-    </header>
+<!DOCTYPE html>  
+<html lang="ko">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>카테고리 드롭다운</title>
+    	<!-- jQuery 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+        }  
+
+        /* 네비게이션 바 스타일 */  
+        nav {  
+            display: flex;  
+            justify-content: space-between; /* 좌우 정렬 */  
+            align-items: center; /* 수직 가운데 정렬 */  
+            padding: 10px 20px; /* 상하 및 좌우 여백 */  
+            background-color: #f8f8f8; /* 배경색 */  
+            border-bottom: 1px solid #ddd; /* 하단 경계선 */  
+            position: relative; /* 드롭다운 메뉴 설정 */  
+        }  
+
+        /* 햄버거 메뉴 및 텍스트 */  
+        .menu-container {  
+            display: flex;  
+            align-items: center;  
+            gap: 10px; /* 아이콘과 텍스트 간격 */  
+            cursor: pointer; /* 클릭 가능한 커서 */  
+        }  
+
+        .hamburger {  
+            display: flex;  
+            flex-direction: column;  
+            justify-content: space-around;  
+            width: 25px; /* 햄버거 메뉴 너비 */  
+            height: 20px; /* 햄버거 메뉴 높이 */  
+        }  
+
+        .hamburger div {  
+            background-color: black; /* 햄버거 라인 색상 (검은색) */  
+            height: 3px; /* 햄버거 라인 두께 */  
+            width: 100%; /* 가로 길이 채우기 */  
+            border-radius: 5px; /* 둥근 모서리 */  
+        }  
+
+        .category-text {  
+            font-size: 16px;  
+            font-weight: bold;  
+            color: black; /* 글자 색상 */  
+            text-transform: uppercase; /* 대문자로 표기 */  
+        }  
+
+        /* 드롭다운 메뉴 */  
+        .dropdown {  
+            display: none; /* 기본적으로 숨김 */  
+            position: absolute;  
+            top: 50px; /* 네비게이션 바로 아래 위치 */  
+            left: 20px; /* 왼쪽 영역 */  
+            background-color: white; /* 드롭다운 배경 */  
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */  
+            padding: 10px;  
+            border-radius: 5px;  
+            z-index: 1000; /* 메뉴가 위로 표시됨 */  
+        }  
+
+        .dropdown a {  
+            display: block; /* 블록 형태 */  
+            text-decoration: none; /* 링크 밑줄 제거 */  
+            color: black; /* 텍스트 색상 */  
+            padding: 10px;  
+            font-size: 14px; /* 글씨 크기 */  
+            border-bottom: 1px solid #ddd; /* 메뉴 간 경계선 */  
+        }  
+
+        .dropdown a:last-child {  
+            border-bottom: none; /* 마지막 메뉴는 경계선 제거 */  
+        }  
+
+        .dropdown a:hover {  
+            background-color: #f0f0f0; /* 호버 시 배경 변경 */  
+        }  
+
+        /* 프로필 정보 */  
+        .profile-info {  
+            display: flex;  
+            align-items: center;  
+        }  
+
+        .profile-info img {  
+            border-radius: 50%; /* 원형 이미지 */  
+            width: 40px;  
+            height: 40px;  
+            margin-right: 10px;  
+        }  
+
+        .profile-info h1 {  
+            font-size: 16px;  
+            margin: 0;  
+        }  
+
+        .profile-info p {  
+            font-size: 14px;  
+            margin: 0;  
+            color: #555;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <!-- 네비게이션 -->  
+    <nav>  
+        <!-- Left: 햄버거 메뉴 아이콘 및 Category -->  
+        <div class="menu-container" id="menuContainer">  
+            <div class="hamburger">  
+                <div></div>  
+                <div></div>  
+                <div></div>  
+            </div>  
+            <div class="category-text">Category</div>  
+        </div>  
+
+        <!-- 드롭다운 메뉴 -->  
+        <div class="dropdown" id="dropdownMenu">  
+            <a href="/">홈</a>  
+            <a href="/profile">프로필</a>  
+            <a href="/visit">찾아오시는길</a>  
+            <a href="/blog">블로그</a>  
+            <a href="/users">회원</a>  
+            <a href="/contact">문의하기</a>  
+            <a href="/contactList">문의목록보기</a>  
+        </div>  
+
+        <!-- Right: 프로필 정보 -->  
+        <div class="profile-info">  
+            <img src="/img/sample.jpg" alt="Profile Image">  
+            <div>  
+                <h1>Dongsik.site</h1>  
+                <p>Hongik University</p>  
+                <p>Software & Communication</p>  
+            </div>  
+        </div>  
+    </nav>  
+
+    <script>  
+        // 드롭다운 메뉴 토글  
+        const menuContainer = document.getElementById('menuContainer');  
+        const dropdownMenu = document.getElementById('dropdownMenu');  
+
+        menuContainer.addEventListener('click', () => {  
+            const isDropdownVisible = dropdownMenu.style.display === 'block';  
+            dropdownMenu.style.display = isDropdownVisible ? 'none' : 'block';  
+        });  
+
+        // 메뉴 외부 클릭 시 닫기  
+        document.addEventListener('click', (event) => {  
+            if (!menuContainer.contains(event.target) && !dropdownMenu.contains(event.target)) {  
+                dropdownMenu.style.display = 'none';  
+            }  
+        });  
+    </script>  
+</body>  
+</html>
