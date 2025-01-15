@@ -1,6 +1,128 @@
-<%-include('layouts/header.ejs')%>
+<%-include('layouts/header.ejs')%>  
 
-    <h2>메인페이지 입니다.</h2>
-    <img src="/img/sample.jpg">
+<!-- INTRO Section -->
+<div id="intro" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+<div style="display: flex; align-items: center; font-family: Arial, sans-serif; margin-top: 10px;">  
+    <!-- 이미지 -->  
+    <img src="img/sample.jpg" alt="Profile Image" width="50" height="50" style="border-radius: 50%; margin-right: 20px;">  
+    
+    <!-- 텍스트 -->  
+    <div>  
+        <p style="margin: 0; font-weight: bold;">KIM DONG SIK</p>  
+        <p style="margin: 0;">Hongik University</p>  
+        <p style="margin: 0;">Department of Software & Communication</p>  
+    </div>  
+</div>  
+        <h2>Self-introduction</h2><br>
+        <h4></h4><br>
+        <p></p>
+      </div>
+    </div>
+  </div>
 
-<%-include('layouts/footer.ejs')%>
+<!-- Portfolio Section -->  
+<div id="portfolio" class="container-fluid text-center bg-grey">  
+    <h2>Portfolio</h2><br>  
+    <h4>What I have created</h4>  
+    <div class="row text-center slideanim">  
+      <div class="col-sm-4">  
+        <div class="thumbnail">  
+          <img src="img/sample.jpg" alt="Space" width="400" height="300" object-fit="cover">  
+          <p><strong>Space</strong></p>  
+          <p>Yes, I built this</p>  
+        </div>  
+      </div>  
+      <div class="col-sm-4">  
+        <div class="thumbnail">  
+          <img src="img/sample.jpg" alt="Building" width="400" height="300" object-fit="cover">  
+          <p><strong>Building</strong></p>  
+          <p>One of my best</p>  
+        </div>  
+      </div>  
+      <div class="col-sm-4">  
+        <div class="thumbnail">  
+          <img src="img/sample.jpg" alt="Sky" width="400" height="300" object-fit="cover">  
+          <p><strong>Sky</strong></p>  
+          <p>It was challenging</p>  
+        </div>  
+      </div>  
+    </div><br>  
+
+    <!-- Contact Section -->  
+    <div id="contact" class="container-fluid bg-grey">   
+        <h2 class="text-center">CONTACT</h2>  
+        <div class="row">  
+          <div class="col-sm-5">  
+            <p>Contact down below and I'll get back to you soon.</p>  
+            <p><span class="glyphicon glyphicon-map-marker"></span> Sunchang, Jeollabuk-do</p>  
+            <p><span class="glyphicon glyphicon-phone"></span> +082 10-6693-3902</p>  
+            <p><span class="glyphicon glyphicon-envelope"></span> panda1842@naver.com</p>  
+          </div>  
+          <div class="col-sm-7 slideanim">  
+            <form id="contactForm">  
+              <div class="row">  
+                <div class="col-sm-6 form-group">  
+                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>  
+                </div>  
+                <div class="col-sm-6 form-group">  
+                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>  
+                </div>  
+                <div class="col-sm-6 form-group">  
+                  <input class="form-control" id="phone" name="phone" placeholder="PhoneNumber(Optional)" type="tel">  
+                </div>  
+              </div>  
+              <textarea class="form-control" id="comments" name="memo" placeholder="Comment any notes.." rows="5"></textarea><br>  
+              <div class="row">  
+                <div class="col-sm-12 form-group">  
+                   <button class="btn btn-default pull-right" type="button" onclick="createContact()">Send</button>  
+                </div>  
+              </div>  
+            </form>  
+          </div>  
+        </div>  
+      </div>      
+<%-include('layouts/footer.ejs')%>  
+
+<script>  
+  // Create Contact function to send form data to server  
+  function createContact() {  
+    // Gather form values  
+    const name = document.getElementById('name').value;  
+    const email = document.getElementById('email').value;  
+    const phone = document.getElementById('phone').value;  
+    const memo = document.getElementById('comments').value;  
+
+    // Form validation  
+    if (!name || !email || !memo) {  
+      alert('Please fill out all required fields.');  
+      return;  
+    }  
+
+    // Send form data via POST request  
+    fetch('/api/contact', {  
+      method: 'POST',  
+      headers: {  
+        'Content-Type': 'application/json',  
+      },  
+      body: JSON.stringify({ name, email, phone, memo }),  
+    })  
+    .then((response) => {  
+      if (!response.ok) {  
+        throw new Error('Failed to submit data.');  
+      }  
+      return response.text();  
+    })  
+    .then((message) => {  
+      // Show success message  
+      alert('작성이 완료되었습니다.');  
+      // Redirect to home page  
+      window.location.href = '/';  
+    })  
+    .catch((error) => {  
+      console.error('Error:', error);  
+      alert('An error occurred while sending your message. Please try again.');  
+    });  
+  }  
+</script>
