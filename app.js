@@ -41,8 +41,6 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-
-
 app.post('/api/contact', (req, res) => {  
   const name = req.body.name;  
   const phone = req.body.phone;  
@@ -62,52 +60,7 @@ app.post('/api/contact', (req, res) => {
       res.send("<script>alert('문의사항이 등록되었습니다.'); location.href='/' </script>" );  
     }  
   });  
-});  
-
-app.get('/contactList', (req, res) => {
-  const selectQuery = `SELECT * FROM contact ORDER BY ID DESC;`
-
-  connectionPool.query(selectQuery, (err, result) => {  
-    if (err) {  
-      console.error('데이터 삽입 중 에러 발생: ', err);  
-      res.status(500).send('내부 서버 오류');  
-    } else {  
-      console.log('데이터가 조회 되었습니다.');
-      console.log(result);
-      res.render('contactList', {lists:result});
-    }  
-  });
 });
-
-app.post('/api/contactDelete/:id', (req, res) => {
-  const id = req.params.id;
-  const deleteQuery = `DELETE FROM contact WHERE id ='${id}'`;
-  connectionPool.query(deleteQuery, (err,result) =>{
-    if (err) {
-      console.error('데이터 삭제 중 에러 발생', err);
-      res.status(500).send('내부 서버 오류');
-    } else {
-      console.log('데이터가 삭제되었습니다.')
-      res.send("<script>alert('문의사항이 삭제되었습니다.'); location.href='/contactList'</script>")
-    }
-  });
-});
-
-app.post('/api/contactUpdate/:id', (req, res) => {  
-  const id = req.params.id;  
-  const status = "done";  
-  const updateQuery = `UPDATE contact SET status = '${status}' WHERE id = '${id}'`;   
-
-  connectionPool.query(updateQuery, [status, id], (err, result) => {  
-      if (err) {  
-          console.error('데이터 업데이트 중 에러 발생:', err);  
-          res.status(500).send('내부 서버 오류');  
-      } else {  
-          console.log('데이터가 업데이트되었습니다.');  
-          res.send("<script>alert('문의사항이 업데이트되었습니다.'); location.href='/contactList'</script>");  
-      }  
-  });  
-});  
 
 app.listen(port, () => {
   console.log(`Node Legacy App listening on port ${port}`)
