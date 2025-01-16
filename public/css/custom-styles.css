@@ -1,0 +1,190 @@
+/* Navbar 기본 스타일 */  
+.navbar {  
+  background-color: #000000; /* 헤더 검은색 배경 */  
+  border: none; /* 기본 테두리 없애기 */  
+}  
+
+.navbar .navbar-brand,  
+.navbar .navbar-nav li a {  
+  color: #ffffff !important; /* 로고와 내비게이션 링크 흰색 텍스트 */  
+  font-weight: bold;  
+}  
+
+.navbar .navbar-brand:hover,  
+.navbar .navbar-nav li a:hover {  
+  color: #cccccc !important; /* 마우스 호버 시 회색 강조 */  
+}  
+
+/* 아래로 스크롤하면서 active 상태의 메뉴 제목 */  
+.navbar .navbar-nav li.active a {  
+  background-color: #333333; /* 클릭된 메뉴는 어둡게 강조 */  
+  color: #ffffff !important;  
+}
+
+
+/* ===== Portfolio Section ===== */  
+
+/* 전역 스타일 */  
+body {  
+  font-family: 'Arial', sans-serif;  
+  background-color: #ffffff;  
+  color: #333333;  
+  margin: 0;  
+  padding: 0;  
+}  
+
+.container-fluid {  
+  max-width: 1200px;  
+  margin: 0 auto;  
+  padding: 20px;  
+}  
+
+.portfolio-section {  
+  padding: 50px 0;  
+  text-align: center;  
+}  
+
+/* 헤더 스타일 */  
+.portfolio-header {  
+  margin-bottom: 40px;  
+}  
+
+.portfolio-title {  
+  font-size: 48px;  
+  font-weight: bold;  
+  letter-spacing: 2px;  
+  text-transform: uppercase;  
+  margin-bottom: 10px;  
+}  
+
+.portfolio-subtitle {  
+  font-size: 16px;  
+  color: #555555;  
+  margin-top: 10px;  
+}  
+
+/* 이미지 갤러리 스타일 */  
+.portfolio-gallery {  
+  display: flex;  
+  justify-content: center;  
+  gap: 20px;  
+}  
+
+.portfolio-card {  
+  width: calc(33.33% - 20px);  
+  position: relative;  
+  overflow: hidden;  
+  border: 1px solid #e1e1e1;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+}  
+
+.portfolio-image {  
+  width: 100%; /* 컨테이너 너비에 맞춤 */  
+  height: 100%; /* 컨테이너 높이에 맞춤 */  
+  object-fit: cover; /* 이미지가 컨테이너를 꽉 채우도록 설정 */  
+  border-radius: 10px; /* 둥근 모서리 유지 */  
+}  
+
+.portfolio-card:hover .portfolio-image {  
+  transform: scale(1.1);  
+}  
+
+.portfolio-card-caption {  
+  position: absolute;  
+  bottom: 0;  
+  background: rgba(0, 0, 0, 0.7);  
+  color: #ffffff;  
+  width: 100%;  
+  padding: 10px 15px;  
+  text-align: left;  
+  font-size: 14px;  
+}
+
+/* ===== STATUS 섹션 스타일 ===== */  
+
+.status-section {  
+  padding: 50px 20px;  
+  background-color: #fdfdfd; /* 밝은 흰색 */  
+  border-radius: 12px;  
+  color: #333333;  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */  
+  font-family: 'Helvetica Neue', sans-serif; /* 세련된 서체 */  
+}  
+
+/* 헤더 스타일 */  
+.status-header {  
+  text-align: center;  
+  margin-bottom: 40px;  
+}  
+
+.status-title {  
+  font-size: 36px;  
+  font-weight: bold;  
+  letter-spacing: 1.5px;  
+  color: #2b2b2b; /* 진한 톤 */  
+}  
+
+/* 항목 섹션 */  
+.status-item h3 {  
+  font-size: 20px;  
+  font-weight: bold;  
+  margin-bottom: 20px;  
+  text-transform: uppercase;  
+  color: #555555; /* 중간 톤 */  
+  letter-spacing: 1.2px;  
+}  
+
+/* Progress Bar */  
+.progress-bar {  
+  background: linear-gradient(to right, #dfe4ea, #d8dadf); /* 고급스러운 배경 그라데이션 */  
+  height: 18px;  
+  width: 100%;  
+  border-radius: 9px; /* 둥근 테두리 */  
+  overflow: hidden; /* 내용 넘침 방지 */  
+  margin-bottom: 20px;  
+  position: relative;  
+}  
+
+.progress-fill {  
+  height: 100%;  
+  background: linear-gradient(to right, #29323c, #485563); /* 블루-그레이 그라데이션 */  
+  color: #ffffff;  
+  line-height: 18px; /* 텍스트를 수직 중앙 정렬 */  
+  text-align: right; /* 텍스트를 오른쪽에 정렬 */  
+  padding-right: 10px; /* 텍스트와 바깥 경계 간 여백 */  
+  font-size: 12px;  
+  font-weight: bold;  
+  border-radius: 9px; /* 둥근 테두리 */  
+  white-space: nowrap; /* 한 줄 표시 */  
+  transition: width 0.5s ease-in-out; /* 부드러운 애니메이션 효과 */  
+}  
+
+.progress-fill.project-a {  
+  background: linear-gradient(to right, #576574, #29323c); /* 네이비-그레이 */  
+}  
+
+.progress-fill.project-b {  
+  background: linear-gradient(to right, #576575, #1e272e); /* 어두운 블루 */  
+}  
+
+.progress-fill.project-c {  
+  background: linear-gradient(to right, #2c3e50, #34495e); /* 딥 네이비 */  
+}  
+
+.skill-python {  
+  background: linear-gradient(to right, #27ae60, #2ecc71); /* 상쾌한 그린 */  
+}  
+
+.skill-js {  
+  background: linear-gradient(to right, #f39c12, #e67e22); /* 생동감 있는 오렌지 */  
+}  
+
+/* 반응형 처리 */  
+@media (max-width: 768px) {  
+  .status-title {  
+     font-size: 28px;  
+  }  
+  .status-item h3 {  
+     font-size: 18px;  
+  }  
+}
