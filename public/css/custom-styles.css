@@ -1,3 +1,5 @@
+
+
 /* Navbar 기본 스타일 */  
 .navbar {  
   background-color: #000000; /* 헤더 검은색 배경 */  
@@ -159,26 +161,13 @@ body {
   transition: width 0.5s ease-in-out; /* 부드러운 애니메이션 효과 */  
 }  
 
-.progress-fill.project-a {  
+.skill-python {  
   background: linear-gradient(to right, #576574, #29323c); /* 네이비-그레이 */  
 }  
 
-.progress-fill.project-b {  
-  background: linear-gradient(to right, #576575, #1e272e); /* 어두운 블루 */  
-}  
-
-.progress-fill.project-c {  
-  background: linear-gradient(to right, #2c3e50, #34495e); /* 딥 네이비 */  
-}  
-
-.skill-python {  
-  background: linear-gradient(to right, #27ae60, #2ecc71); /* 상쾌한 그린 */  
-}  
-
 .skill-js {  
-  background: linear-gradient(to right, #f39c12, #e67e22); /* 생동감 있는 오렌지 */  
-}  
-
+  background: linear-gradient(to right, #576575, #1e272e); /* 어두운 블루 */  
+}
 /* 반응형 처리 */  
 @media (max-width: 768px) {  
   .status-title {  
@@ -188,3 +177,28 @@ body {
      font-size: 18px;  
   }  
 }
+
+/* photo section */
+.photo-item img {  
+  width: 100%; /* 컨테이너 너비에 맞춤 */  
+  height: 100%; /* 컨테이너 높이에 맞춤 */  
+  object-fit: cover; /* 컨테이너를 채우면서 비율을 유지 */  
+  display: block;  
+  transition: transform 0.3s ease, filter 0.3s ease;  
+  filter: grayscale(100%);  
+}  
+
+.photo-item {  
+  position: relative;  
+  overflow: hidden;  
+  border-radius: 10px;  
+  aspect-ratio: 4 / 3; /* 이미지의 비율 유지 (4:3 예시) */  
+}
+
+#first-photo {  
+  width: 80%; /* 사진의 너비를 조정 (원래 컨테이너에서 약간 작게) */  
+  height: auto; /* 비율을 유지하면서 자동 높이 */  
+  margin: 0 auto; /* 중앙 정렬 */  
+  display: block; /* 블록 요소 */  
+}  
+

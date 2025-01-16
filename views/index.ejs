@@ -1,174 +1,162 @@
 <%-include('layouts/header.ejs')%>  
 
-<!-- INTRO Section -->  
-<div id="intro" class="container-fluid intro-section">  
-  <div class="row">  
-    <!-- 좌측 사진 영역 -->  
-    <div class="col-md-6 intro-image-section" style="text-align: center;">  
-      <!-- 프로필 이미지 -->  
-      <img src="img/character.jpg" alt="Profile Image" class="intro-img" style="max-width: 300px; width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">  
+<div id="fullpage">
+  <!-- INTRO Section -->  
+  <div id="intro" class="container-fluid intro-section">  
+    <div class="row">  
+      <!-- 좌측 사진 영역 -->  
+      <div class="col-md-6 intro-image-section" style="text-align: center;">  
+        <!-- 프로필 이미지 -->  
+        <img src="img/character.jpg" alt="Profile Image" class="intro-img" style="max-width: 300px; width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">  
 
-      <!-- 로고와 텍스트 (프로필 이미지의 아래에 배치) -->  
-      <div style="display: flex; align-items: center; margin-top: 20px; justify-content: center;">  
-        <!-- Logo Image -->  
-        <img src="img/sample.jpg" alt="Logo Image" width="50" height="50" style="border-radius: 50%; margin-right: 10px;">  
+        <!-- 로고와 텍스트 (프로필 이미지의 아래에 배치) -->  
+        <div style="display: flex; align-items: center; margin-top: 20px; justify-content: center;">  
+          <!-- Logo Image -->  
+          <img src="img/sample.jpg" alt="Logo Image" width="50" height="50" style="border-radius: 50%; margin-right: 10px;">  
 
-        <!-- 텍스트 -->  
-        <div style="text-align: left;">  
-          <p style="margin: 0; font-weight: bold;">KIM DONG SIK</p>  
-          <p style="margin: 0; font-size: 14px; color: #555;">Hongik University</p>  
-          <p style="margin: 0; font-size: 14px; color: #555;">Department of Software & Communication</p>  
+          <!-- 텍스트 -->  
+          <div style="text-align: left;">  
+            <p style="margin: 0; font-weight: bold;">KIM DONG SIK</p>  
+            <p style="margin: 0; font-size: 14px; color: #555;">Hongik University</p>  
+            <p style="margin: 0; font-size: 14px; color: #555;">Department of Software & Communication</p>  
+          </div>  
         </div>  
       </div>  
-    </div>  
 
-    <!-- 우측 텍스트 영역 -->  
-    <div class="col-md-6 intro-text-section">  
-      <h2 class="intro-title">Self-Introduction</h2>  
-      <p class="intro-paragraph">  
-        Welcome! I am a passionate developer from South Korea, currently studying Software & Communication at Hongik University.  
-        I believe in crafting innovative solutions to complex problems, and my expertise spans across web development and data analysis.  
+      <!-- 우측 텍스트 영역 -->  
+      <div class="col-md-6 intro-text-section">  
+        <h2 class="intro-title">Self-Introduction</h2>  
+        <p class="intro-paragraph">  
+          Welcome! I am a passionate developer from South Korea, currently studying Software & Communication at Hongik University.  
+          I believe in crafting innovative solutions to complex problems, and my expertise spans across web development and data analysis.  
+        </p>  
+        <p class="intro-paragraph">  
+          My journey in programming began several years ago, and it has been filled with exciting challenges and learning experiences.  
+          I am eager to contribute to the world of tech and collaborate with inspiring individuals globally.  
+        </p>  
+      </div>  
+    </div>  
+  </div>  
+
+  <style>  
+    .intro-section {  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      padding: 60px 20px;  
+      background-color: #f5f5f5;  
+      color: #333;  
+      font-family: "Arial", sans-serif;  
+    }  
+
+    .intro-image-section {  
+      text-align: center;  
+      margin-bottom: 20px;  
+    }  
+
+    .intro-img {  
+      max-width: 300px;  
+      width: 100%;  
+      border-radius: 10px;  
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+    }  
+
+    .intro-name {  
+      margin-top: 20px;  
+      font-size: 24px;  
+      font-weight: bold;  
+      text-transform: uppercase;  
+    }  
+
+    .intro-text-section {  
+      padding: 20px 40px;  
+    }  
+
+    .intro-title {  
+      font-size: 28px;  
+      font-weight: bold;  
+      margin-bottom: 20px;  
+      text-transform: uppercase;  
+    }  
+
+    .intro-paragraph {  
+      font-size: 16px;  
+      line-height: 1.6;  
+      margin-bottom: 20px;  
+    }  
+  </style>
+</div>
+
+<div id="fullpage">
+  <!--portfolio section-->  
+  <div id="portfolio" class="container-fluid portfolio-section">  
+    <!-- 헤더 -->  
+    <div class="portfolio-header">  
+      <h1 class="portfolio-title">Portfolio</h1>  
+      <p class="portfolio-subtitle">  
+        Creative ideas and timeless designs. Explore a collection of work that showcases innovation and attention to detail.  
       </p>  
-      <p class="intro-paragraph">  
-        My journey in programming began several years ago, and it has been filled with exciting challenges and learning experiences.  
-        I am eager to contribute to the world of tech and collaborate with inspiring individuals globally.  
-      </p>  
     </div>  
-  </div>  
-</div>  
 
-<style>  
-  .intro-section {  
-    display: flex;  
-    align-items: center;  
-    justify-content: center;  
-    padding: 60px 20px;  
-    background-color: #f5f5f5;  
-    color: #333;  
-    font-family: "Arial", sans-serif;  
-  }  
-
-  .intro-image-section {  
-    text-align: center;  
-    margin-bottom: 20px;  
-  }  
-
-  .intro-img {  
-    max-width: 300px;  
-    width: 100%;  
-    border-radius: 10px;  
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
-  }  
-
-  .intro-name {  
-    margin-top: 20px;  
-    font-size: 24px;  
-    font-weight: bold;  
-    text-transform: uppercase;  
-  }  
-
-  .intro-text-section {  
-    padding: 20px 40px;  
-  }  
-
-  .intro-title {  
-    font-size: 28px;  
-    font-weight: bold;  
-    margin-bottom: 20px;  
-    text-transform: uppercase;  
-  }  
-
-  .intro-paragraph {  
-    font-size: 16px;  
-    line-height: 1.6;  
-    margin-bottom: 20px;  
-  }  
-</style>
-
-<!--portfolio section-->  
-<div id="portfolio" class="container-fluid portfolio-section">  
-  <!-- 헤더 -->  
-  <div class="portfolio-header">  
-    <h1 class="portfolio-title">Portfolio</h1>  
-    <p class="portfolio-subtitle">  
-      Creative ideas and timeless designs. Explore a collection of work that showcases innovation and attention to detail.  
-    </p>  
-  </div>  
-
-  <!-- 콘텐츠: 이미지 카드 3개 -->  
-  <div class="portfolio-gallery">  
-    <div class="portfolio-card">  
-      <img src="img/projectA.jpg" alt="Project 1" class="portfolio-image">  
-      <div class="portfolio-card-caption">  
-        <p>E-sports Competition Web-site</p>  
-      </div>  
-    </div>  
-    <div class="portfolio-card">  
-      <img src="img/projectB.jpg" alt="Project 2" class="portfolio-image">  
-      <div class="portfolio-card-caption">  
-        <p>My Portfolio Web-site</p>  
-      </div>  
-    </div>  
-    <div class="portfolio-card">  
-      <img src="img/sample.jpg" alt="Project 3" class="portfolio-image">  
-      <div class="portfolio-card-caption">  
-        <p>Project Title 3</p>  
-      </div>  
-    </div>  
-  </div>  
-</div>  
-
-<!-- Status Section -->  
-<section id="status" class="status-section container-fluid">  
-  <div class="status-header">  
-    <h2 class="status-title">STATUS</h2>  
-  </div>  
-
-  <!-- Current Projects -->  
-  <div class="status-item">  
-    <h3>Current Projects</h3>  
-    <div class="project-progress">  
-      <div class="progress-item">  
-        <p>Project A</p>  
-        <div class="progress-bar">  
-          <div class="progress-fill project-a" style="width: 100%;">100%</div>  
+    <!-- 콘텐츠: 이미지 카드 3개 -->  
+    <div class="portfolio-gallery">  
+      <div class="portfolio-card">  
+        <img src="img/projectA.jpg" alt="Project 1" class="portfolio-image">  
+        <div class="portfolio-card-caption">  
+          <p>E-sports Competition Web-site</p>  
         </div>  
       </div>  
-      <div class="progress-item">  
-        <p>Project B</p>  
-        <div class="progress-bar">  
-          <div class="progress-fill project-b" style="width: 70%;">70%</div>  
+      <div class="portfolio-card">  
+        <img src="img/projectB.jpg" alt="Project 2" class="portfolio-image">  
+        <div class="portfolio-card-caption">  
+          <p>My Portfolio Web-site</p>  
         </div>  
       </div>  
-      <div class="progress-item">  
-        <p>Project C</p>  
-        <div class="progress-bar">  
-          <div class="progress-fill project-c" style="width: 5%;">5%</div>  
+      <div class="portfolio-card">  
+        <img src="img/ProjectC.jpg" alt="Project 3" class="portfolio-image">  
+        <div class="portfolio-card-caption">  
+          <p>Obtain an SQLD</p>  
         </div>  
       </div>  
     </div>  
   </div>  
+</div>
 
-  <!-- Skills -->  
-  <div class="status-item">  
-    <h3>Skills</h3>  
-    <div class="skill-progress">  
-      <div class="progress-item">  
-        <p>Python</p>  
-        <div class="progress-bar">  
-          <div class="progress-fill skill-python" style="width: 90%;">90%</div>  
+<div id="fullpage">
+  <!-- Status Section -->  
+  <section id="status" class="status-section container-fluid">  
+    <div class="status-header">  
+      <h2 class="status-title">STATUS</h2>  
+    </div>  
+
+    <!-- Skills -->  
+    <div class="status-item">  
+      <h3>Skills</h3>  
+      <div class="skill-progress">  
+        <div class="progress-item">  
+          <p>Python</p>  
+          <div class="progress-bar">  
+            <div class="progress-fill skill-python" style="width: 90%;">90%</div>  
+          </div>  
         </div>  
-      </div>  
-      <div class="progress-item">  
-        <p>JavaScript</p>  
-        <div class="progress-bar">  
-          <div class="progress-fill skill-js" style="width: 75%;">75%</div>  
-        </div>  
+        <div class="progress-item">  
+          <p>JavaScript</p>  
+          <div class="progress-bar">  
+            <div class="progress-fill skill-js" style="width: 75%;">75%</div>  
+          </div>  
+        </div>
+        <div class="progress-item">  
+          <p>HTML</p>  
+          <div class="progress-bar">  
+            <div class="progress-fill skill-js" style="width: 40%;">40%</div>  
+          </div>  
+        </div>
       </div>  
     </div>  
-  </div>  
-</section>  
+  </section>  
+</div>
 
+<div id="fullpage">
     <!-- Photo Section -->  
     <div id="photo" class="container-fluid text-center bg-light">  
       <h2>Photo Section</h2><br>  
@@ -176,27 +164,27 @@
       <div class="photo-gallery">  
         <!-- Gallery Item -->  
         <div class="photo-item">  
-          <img src="img/sample.jpg" alt="Sunset">  
+          <img id="first-photo" src="img/my_image.jpg" alt="Sunset">  
           <div class="photo-overlay">  
-            <p>Sunset - A peaceful evening</p>  
+            <p>My ID photo</p>  
           </div>  
         </div>  
         <div class="photo-item">  
-          <img src="img/sample.jpg" alt="Mountain">  
+          <img src="img/my_image2.jpg" alt="Mountain">  
           <div class="photo-overlay">  
-            <p>Mountain - Reaching new heights</p>  
+            <p>My childhood</p>  
           </div>  
         </div>  
         <div class="photo-item">  
-          <img src="img/sample.jpg" alt="Ocean">  
+          <img src="img/my_image3.jpg" alt="Ocean">  
           <div class="photo-overlay">  
-            <p>Ocean - Waves of tranquility</p>  
+            <p>My hobby</p>  
           </div>  
         </div>  
         <div class="photo-item">  
-          <img src="img/sample.jpg" alt="Forest">  
+          <img src="img/my_image4.jpg" alt="Forest">  
           <div class="photo-overlay">  
-            <p>Forest - Green serenity</p>  
+            <p>My favorite</p>  
           </div>  
         </div>  
       </div>  
@@ -247,8 +235,10 @@
       .photo-item:hover .photo-overlay {  
         opacity: 1;  
       }  
-    </style>  
+    </style>
+</div>  
 
+<div id="fullpage">
     <!-- Contact Section -->  
     <div id="contact" class="container-fluid bg-grey">   
         <h2 class="text-center">CONTACT</h2>  
@@ -281,8 +271,11 @@
             </form>  
           </div>  
         </div>  
-      </div>      
-<%-include('layouts/footer.ejs')%>  
+      </div>
+    </div>
+</div>
+
+<%-include('layouts/footer.ejs')%>
 
 <script>  
   // Create Contact function to send form data to server  
