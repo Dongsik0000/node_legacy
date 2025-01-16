@@ -34,3 +34,47 @@ document.addEventListener('DOMContentLoaded', function () {
       }  
     });  
   });
+
+
+
+// scripts.js  
+
+// Create Contact function to send form data to server  
+function createContact() {  
+  // Gather form values  
+  const name = document.getElementById('name').value;  
+  const email = document.getElementById('email').value;  
+  const phone = document.getElementById('phone').value;  
+  const memo = document.getElementById('comments').value;  
+
+  // Form validation  
+  if (!name || !email || !memo) {  
+    alert('Please fill out all required fields.');  
+    return;  
+  }  
+
+  // Send form data via POST request  
+  fetch('/api/contact', {  
+    method: 'POST',  
+    headers: {  
+      'Content-Type': 'application/json',  
+    },  
+    body: JSON.stringify({ name, email, phone, memo }),  
+  })  
+    .then((response) => {  
+      if (!response.ok) {  
+        throw new Error('Failed to submit data.');  
+      }  
+      return response.text();  
+    })  
+    .then((message) => {  
+      // Show success message  
+      alert('작성이 완료되었습니다.');  
+      // Redirect to home page  
+      window.location.href = '/';  
+    })  
+    .catch((error) => {  
+      console.error('Error:', error);  
+      alert('An error occurred while sending your message. Please try again.');  
+    });  
+}  

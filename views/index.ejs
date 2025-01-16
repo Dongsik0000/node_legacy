@@ -37,53 +37,7 @@
     </div>  
   </div>  
 
-  <style>  
-    .intro-section {  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      padding: 60px 20px;  
-      background-color: #f5f5f5;  
-      color: #333;  
-      font-family: "Arial", sans-serif;  
-    }  
 
-    .intro-image-section {  
-      text-align: center;  
-      margin-bottom: 20px;  
-    }  
-
-    .intro-img {  
-      max-width: 300px;  
-      width: 100%;  
-      border-radius: 10px;  
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
-    }  
-
-    .intro-name {  
-      margin-top: 20px;  
-      font-size: 24px;  
-      font-weight: bold;  
-      text-transform: uppercase;  
-    }  
-
-    .intro-text-section {  
-      padding: 20px 40px;  
-    }  
-
-    .intro-title {  
-      font-size: 28px;  
-      font-weight: bold;  
-      margin-bottom: 20px;  
-      text-transform: uppercase;  
-    }  
-
-    .intro-paragraph {  
-      font-size: 16px;  
-      line-height: 1.6;  
-      margin-bottom: 20px;  
-    }  
-  </style>
 
 
   <!--portfolio section-->  
@@ -186,52 +140,7 @@
       </div>  
     </div>  
     
-    <style>  
-      #photo {  
-        padding: 40px 20px;  
-      }  
-      .photo-gallery {  
-        display: grid;  
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
-        gap: 15px;  
-      }  
-      .photo-item {  
-        position: relative;  
-        overflow: hidden;  
-        border-radius: 10px;  
-      }  
-      .photo-item img {  
-        width: 100%;  
-        height: auto;  
-        display: block;  
-        transition: transform 0.3s ease, filter 0.3s ease;  
-        filter: grayscale(100%);  
-      }  
-      .photo-item:hover img {  
-        transform: scale(1.1);  
-        filter: grayscale(0%);  
-      }  
-      .photo-overlay {  
-        position: absolute;  
-        top: 0;  
-        left: 0;  
-        width: 100%;  
-        height: 100%;  
-        background-color: rgba(0, 0, 0, 0.7);  
-        color: #fff;  
-        display: flex;  
-        justify-content: center;  
-        align-items: center;  
-        opacity: 0;  
-        transition: opacity 0.3s ease;  
-        font-size: 16px;  
-        font-family: Arial, sans-serif;  
-        text-align: center;  
-      }  
-      .photo-item:hover .photo-overlay {  
-        opacity: 1;  
-      }  
-    </style>
+
 </div>  
 
 <!-- Contact Section -->  
@@ -277,44 +186,7 @@
 
 <%-include('layouts/footer.ejs')%>
 
-<script>  
-  // Create Contact function to send form data to server  
-  function createContact() {  
-    // Gather form values  
-    const name = document.getElementById('name').value;  
-    const email = document.getElementById('email').value;  
-    const phone = document.getElementById('phone').value;  
-    const memo = document.getElementById('comments').value;  
-
-    // Form validation  
-    if (!name || !email || !memo) {  
-      alert('Please fill out all required fields.');  
-      return;  
-    }  
-
-    // Send form data via POST request  
-    fetch('/api/contact', {  
-      method: 'POST',  
-      headers: {  
-        'Content-Type': 'application/json',  
-      },  
-      body: JSON.stringify({ name, email, phone, memo }),  
-    })  
-    .then((response) => {  
-      if (!response.ok) {  
-        throw new Error('Failed to submit data.');  
-      }  
-      return response.text();  
-    })  
-    .then((message) => {  
-      // Show success message  
-      alert('작성이 완료되었습니다.');  
-      // Redirect to home page  
-      window.location.href = '/';  
-    })  
-    .catch((error) => {  
-      console.error('Error:', error);  
-      alert('An error occurred while sending your message. Please try again.');  
-    });  
-  }  
-</script>
+<!-- Include scripts.js -->  
+<script src="/js/scripts.js"></script>  
+</body>  
+</html>  

@@ -1,257 +1,356 @@
-
-
-/* Navbar 기본 스타일 */  
-.navbar {  
-  background-color: #000000; /* 헤더 검은색 배경 */  
-  border: none; /* 기본 테두리 없애기 */  
-}  
-
-.navbar .navbar-brand,  
-.navbar .navbar-nav li a {  
-  color: #ffffff !important; /* 로고와 내비게이션 링크 흰색 텍스트 */  
-  font-weight: bold;  
-}  
-
-.navbar .navbar-brand:hover,  
-.navbar .navbar-nav li a:hover {  
-  color: #cccccc !important; /* 마우스 호버 시 회색 강조 */  
-}  
-
-/* 아래로 스크롤하면서 active 상태의 메뉴 제목 */  
-.navbar .navbar-nav li.active a {  
-  background-color: #333333; /* 클릭된 메뉴는 어둡게 강조 */  
-  color: #ffffff !important;  
+/* Navbar 기본 스타일 */
+.navbar {
+  background-color: #000000; /* 헤더 검은색 배경 */
+  border: none; /* 기본 테두리 없애기 */
 }
 
-
-/* ===== Portfolio Section ===== */  
-
-/* 전역 스타일 */  
-body {  
-  font-family: 'Arial', sans-serif;  
-  background-color: #ffffff;  
-  color: #333333;  
-  margin: 0;  
-  padding: 0;  
-}  
-
-.container-fluid {  
-  max-width: 1200px;  
-  margin: 0 auto;  
-  padding: 20px;  
-}  
-
-.portfolio-section {  
-  padding: 50px 0;  
-  text-align: center;  
-}  
-
-/* 헤더 스타일 */  
-.portfolio-header {  
-  margin-bottom: 40px;  
-}  
-
-.portfolio-title {  
-  font-size: 48px;  
-  font-weight: bold;  
-  letter-spacing: 2px;  
-  text-transform: uppercase;  
-  margin-bottom: 10px;  
-}  
-
-.portfolio-subtitle {  
-  font-size: 16px;  
-  color: #555555;  
-  margin-top: 10px;  
-}  
-
-/* 이미지 갤러리 스타일 */  
-.portfolio-gallery {  
-  display: flex;  
-  justify-content: center;  
-  gap: 20px;  
-}  
-
-.portfolio-card {  
-  width: calc(33.33% - 20px);  
-  position: relative;  
-  overflow: hidden;  
-  border: 1px solid #e1e1e1;  
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
-}  
-
-.portfolio-image {  
-  width: 100%; /* 컨테이너 너비에 맞춤 */  
-  height: 100%; /* 컨테이너 높이에 맞춤 */  
-  object-fit: cover; /* 이미지가 컨테이너를 꽉 채우도록 설정 */  
-  border-radius: 10px; /* 둥근 모서리 유지 */  
-}  
-
-.portfolio-card:hover .portfolio-image {  
-  transform: scale(1.1);  
-}  
-
-.portfolio-card-caption {  
-  position: absolute;  
-  bottom: 0;  
-  background: rgba(0, 0, 0, 0.7);  
-  color: #ffffff;  
-  width: 100%;  
-  padding: 10px 15px;  
-  text-align: left;  
-  font-size: 14px;  
+.navbar .navbar-brand,
+.navbar .navbar-nav li a {
+  color: #ffffff !important; /* 로고와 내비게이션 링크 흰색 텍스트 */
+  font-weight: bold;
 }
 
-/* ===== STATUS 섹션 스타일 ===== */  
-
-.status-section {  
-  padding: 50px 20px;  
-  background-color: #fdfdfd; /* 밝은 흰색 */  
-  border-radius: 12px;  
-  color: #333333;  
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */  
-  font-family: 'Helvetica Neue', sans-serif; /* 세련된 서체 */  
-}  
-
-/* 헤더 스타일 */  
-.status-header {  
-  text-align: center;  
-  margin-bottom: 40px;  
-}  
-
-.status-title {  
-  font-size: 36px;  
-  font-weight: bold;  
-  letter-spacing: 1.5px;  
-  color: #2b2b2b; /* 진한 톤 */  
-}  
-
-/* 항목 섹션 */  
-.status-item h3 {  
-  font-size: 20px;  
-  font-weight: bold;  
-  margin-bottom: 20px;  
-  text-transform: uppercase;  
-  color: #555555; /* 중간 톤 */  
-  letter-spacing: 1.2px;  
-}  
-
-/* Progress Bar */  
-.progress-bar {  
-  background: linear-gradient(to right, #dfe4ea, #d8dadf); /* 고급스러운 배경 그라데이션 */  
-  height: 18px;  
-  width: 100%;  
-  border-radius: 9px; /* 둥근 테두리 */  
-  overflow: hidden; /* 내용 넘침 방지 */  
-  margin-bottom: 20px;  
-  position: relative;  
-}  
-
-.progress-fill {  
-  height: 100%;  
-  background: linear-gradient(to right, #29323c, #485563); /* 블루-그레이 그라데이션 */  
-  color: #ffffff;  
-  line-height: 18px; /* 텍스트를 수직 중앙 정렬 */  
-  text-align: right; /* 텍스트를 오른쪽에 정렬 */  
-  padding-right: 10px; /* 텍스트와 바깥 경계 간 여백 */  
-  font-size: 12px;  
-  font-weight: bold;  
-  border-radius: 9px; /* 둥근 테두리 */  
-  white-space: nowrap; /* 한 줄 표시 */  
-  transition: width 0.5s ease-in-out; /* 부드러운 애니메이션 효과 */  
-}  
-
-.skill-python {  
-  background: linear-gradient(to right, #576574, #29323c); /* 네이비-그레이 */  
-}  
-
-.skill-js {  
-  background: linear-gradient(to right, #576575, #1e272e); /* 어두운 블루 */  
+.navbar .navbar-brand:hover,
+.navbar .navbar-nav li a:hover {
+  color: #cccccc !important; /* 마우스 호버 시 회색 강조 */
 }
-/* 반응형 처리 */  
-@media (max-width: 768px) {  
-  .status-title {  
-     font-size: 28px;  
-  }  
-  .status-item h3 {  
-     font-size: 18px;  
-  }  
+
+/* 아래로 스크롤하면서 active 상태의 메뉴 제목 */
+.navbar .navbar-nav li.active a {
+  background-color: #333333; /* 클릭된 메뉴는 어둡게 강조 */
+  color: #ffffff !important;
+}
+
+/* ===== Portfolio Section ===== */
+
+/* 전역 스타일 */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.portfolio-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* 헤더 스타일 */
+.portfolio-header {
+  margin-bottom: 40px;
+}
+
+.portfolio-title {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.portfolio-subtitle {
+  font-size: 16px;
+  color: #555555;
+  margin-top: 10px;
+}
+
+/* 이미지 갤러리 스타일 */
+.portfolio-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-card {
+  width: calc(33.33% - 20px);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-image {
+  width: 100%; /* 컨테이너 너비에 맞춤 */
+  height: 100%; /* 컨테이너 높이에 맞춤 */
+  object-fit: cover; /* 이미지가 컨테이너를 꽉 채우도록 설정 */
+  border-radius: 10px; /* 둥근 모서리 유지 */
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.1);
+}
+
+.portfolio-card-caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* ===== STATUS 섹션 스타일 ===== */
+
+.status-section {
+  padding: 50px 20px;
+  background-color: #fdfdfd; /* 밝은 흰색 */
+  border-radius: 12px;
+  color: #333333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  font-family: "Helvetica Neue", sans-serif; /* 세련된 서체 */
+}
+
+/* 헤더 스타일 */
+.status-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.status-title {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #2b2b2b; /* 진한 톤 */
+}
+
+/* 항목 섹션 */
+.status-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #555555; /* 중간 톤 */
+  letter-spacing: 1.2px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background: linear-gradient(
+    to right,
+    #dfe4ea,
+    #d8dadf
+  ); /* 고급스러운 배경 그라데이션 */
+  height: 18px;
+  width: 100%;
+  border-radius: 9px; /* 둥근 테두리 */
+  overflow: hidden; /* 내용 넘침 방지 */
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* 블루-그레이 그라데이션 */
+  color: #ffffff;
+  line-height: 18px; /* 텍스트를 수직 중앙 정렬 */
+  text-align: right; /* 텍스트를 오른쪽에 정렬 */
+  padding-right: 10px; /* 텍스트와 바깥 경계 간 여백 */
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 9px; /* 둥근 테두리 */
+  white-space: nowrap; /* 한 줄 표시 */
+  transition: width 0.5s ease-in-out; /* 부드러운 애니메이션 효과 */
+}
+
+.skill-python {
+  background: linear-gradient(to right, #576574, #29323c); /* 네이비-그레이 */
+}
+
+.skill-js {
+  background: linear-gradient(to right, #576575, #1e272e); /* 어두운 블루 */
+}
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  .status-title {
+    font-size: 28px;
+  }
+  .status-item h3 {
+    font-size: 18px;
+  }
 }
 
 /* photo section */
-.photo-item img {  
-  width: 100%; /* 컨테이너 너비에 맞춤 */  
-  height: 100%; /* 컨테이너 높이에 맞춤 */  
-  object-fit: cover; /* 컨테이너를 채우면서 비율을 유지 */  
-  display: block;  
-  transition: transform 0.3s ease, filter 0.3s ease;  
-  filter: grayscale(100%);  
+.photo-item img {
+  width: 100%; /* 컨테이너 너비에 맞춤 */
+  height: 100%; /* 컨테이너 높이에 맞춤 */
+  object-fit: cover; /* 컨테이너를 채우면서 비율을 유지 */
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 4 / 3; /* 이미지의 비율 유지 (4:3 예시) */
+}
+
+#first-photo {
+  width: 80%; /* 사진의 너비를 조정 (원래 컨테이너에서 약간 작게) */
+  height: auto; /* 비율을 유지하면서 자동 높이 */
+  margin: 0 auto; /* 중앙 정렬 */
+  display: block; /* 블록 요소 */
+}
+
+/* ======== BACK TO TOP BUTTON ======== */
+#back-to-top {
+  display: none; /* 처음에는 숨김 */
+  position: fixed;
+  bottom: 20px; /* 페이지 하단 */
+  right: 20px; /* 우측 여백 */
+  z-index: 1000;
+  padding: 10px 15px;
+  border-radius: 50%;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0.8;
+  transition: background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #555;
+}
+
+/* ======== DARK MODE BUTTON ======== */
+#dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #333333;
+  --text-color: #ffffff;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#photo {
+  padding: 40px 20px;
+}
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+.photo-item:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.photo-item:hover .photo-overlay {
+  opacity: 1;
+}
+
+
+
+
+.intro-section {  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  padding: 60px 20px;  
+  background-color: #f5f5f5;  
+  color: #333;  
+  font-family: "Arial", sans-serif;  
 }  
 
-.photo-item {  
-  position: relative;  
-  overflow: hidden;  
-  border-radius: 10px;  
-  aspect-ratio: 4 / 3; /* 이미지의 비율 유지 (4:3 예시) */  
-}
-
-#first-photo {  
-  width: 80%; /* 사진의 너비를 조정 (원래 컨테이너에서 약간 작게) */  
-  height: auto; /* 비율을 유지하면서 자동 높이 */  
-  margin: 0 auto; /* 중앙 정렬 */  
-  display: block; /* 블록 요소 */  
-}
-
-/* ======== BACK TO TOP BUTTON ======== */  
-#back-to-top {  
-  display: none; /* 처음에는 숨김 */  
-  position: fixed;  
-  bottom: 20px; /* 페이지 하단 */  
-  right: 20px; /* 우측 여백 */  
-  z-index: 1000;  
-  padding: 10px 15px;  
-  border-radius: 50%;  
-  background-color: #333;  
-  color: white;  
-  cursor: pointer;  
-  font-size: 18px;  
+.intro-image-section {  
   text-align: center;  
-  opacity: 0.8;  
-  transition: background-color 0.3s ease;  
+  margin-bottom: 20px;  
 }  
 
-#back-to-top:hover {  
-  background-color: #555;  
+.intro-img {  
+  max-width: 300px;  
+  width: 100%;  
+  border-radius: 10px;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
 }  
 
-/* ======== DARK MODE BUTTON ======== */  
-#dark-mode-toggle {  
-  position: fixed;  
-  top: 20px;  
-  right: 20px;  
-  background-color: #333;  
-  color: #fff;  
-  border: none;  
-  border-radius: 5px;  
-  padding: 10px 15px;  
-  font-size: 14px;  
+.intro-name {  
+  margin-top: 20px;  
+  font-size: 24px;  
   font-weight: bold;  
-  cursor: pointer;  
-  z-index: 1000;  
+  text-transform: uppercase;  
 }  
 
-[data-theme="dark"] {  
-  --bg-color: #333333;  
-  --text-color: #ffffff;  
+.intro-text-section {  
+  padding: 20px 40px;  
 }  
 
-[data-theme="light"] {  
-  --bg-color: #ffffff;  
-  --text-color: #333333;  
+.intro-title {  
+  font-size: 28px;  
+  font-weight: bold;  
+  margin-bottom: 20px;  
+  text-transform: uppercase;  
 }  
 
-body {  
-  background-color: var(--bg-color);  
-  color: var(--text-color);  
-  transition: background-color 0.3s ease, color 0.3s ease;  
-}   
+.intro-paragraph {  
+  font-size: 16px;  
+  line-height: 1.6;  
+  margin-bottom: 20px;  
+}  
