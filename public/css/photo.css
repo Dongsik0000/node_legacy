@@ -1,45 +1,69 @@
 /* photo section */
 .photo-item img {
-    width: 100%; /* 컨테이너 너비에 맞춤 */
-    height: 100%; /* 컨테이너 높이에 맞춤 */
-    object-fit: cover; /* 컨테이너를 채우면서 비율을 유지 */
-    display: block;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: grayscale(100%);
-  }
-  
-  .photo-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    aspect-ratio: 4 / 3; /* 이미지의 비율 유지 (4:3 예시) */
-  }
-  
-  #first-photo {
-    width: 80%; /* 사진의 너비를 조정 (원래 컨테이너에서 약간 작게) */
-    height: auto; /* 비율을 유지하면서 자동 높이 */
-    margin: 0 auto; /* 중앙 정렬 */
-    display: block; /* 블록 요소 */
-  }
-  
-  /* ======== BACK TO TOP BUTTON ======== */
-  #back-to-top {
-    display: none; /* 처음에는 숨김 */
-    position: fixed;
-    bottom: 20px; /* 페이지 하단 */
-    right: 20px; /* 우측 여백 */
-    z-index: 1000;
-    padding: 10px 15px;
-    border-radius: 50%;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-    text-align: center;
-    opacity: 0.8;
-    transition: background-color 0.3s ease;
-  }
-  
-  #back-to-top:hover {
-    background-color: #555;
-  }
+  width: 100%; /* 컨테이너 너비에 맞춤 */
+  height: 100%; /* 컨테이너 높이에 맞춤 */
+  object-fit: cover; /* 컨테이너를 채우면서 비율을 유지 */
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 4 / 3; /* 이미지의 비율 유지 (4:3 예시) */
+}
+
+#first-photo {
+  width: 80%; /* 사진의 너비를 조정 (원래 컨테이너에서 약간 작게) */
+  height: auto; /* 비율을 유지하면서 자동 높이 */
+  margin: 0 auto; /* 중앙 정렬 */
+  display: block; /* 블록 요소 */
+}
+
+/* 첫번째 사진 크기 조절*/
+#photo {
+  padding: 40px 20px;
+}
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+.photo-item:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.photo-item:hover .photo-overlay {
+  opacity: 1;
+}

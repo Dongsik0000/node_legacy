@@ -2,76 +2,76 @@
 
 /* 전역 스타일 */
 body {
-    font-family: "Arial", sans-serif;
-    background-color: #ffffff;
-    color: #333333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container-fluid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .portfolio-section {
-    padding: 50px 0;
-    text-align: center;
-  }
-  
-  /* 헤더 스타일 */
-  .portfolio-header {
-    margin-bottom: 40px;
-  }
-  
-  .portfolio-title {
-    font-size: 48px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  
-  .portfolio-subtitle {
-    font-size: 16px;
-    color: #555555;
-    margin-top: 10px;
-  }
-  
-  /* 이미지 갤러리 스타일 */
-  .portfolio-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .portfolio-card {
-    width: calc(33.33% - 20px);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .portfolio-image {
-    width: 100%; /* 컨테이너 너비에 맞춤 */
-    height: 100%; /* 컨테이너 높이에 맞춤 */
-    object-fit: cover; /* 이미지가 컨테이너를 꽉 채우도록 설정 */
-    border-radius: 10px; /* 둥근 모서리 유지 */
-  }
-  
-  .portfolio-card:hover .portfolio-image {
-    transform: scale(1.1);
-  }
-  
-  .portfolio-card-caption {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    width: 100%;
-    padding: 10px 15px;
-    text-align: left;
-    font-size: 14px;
-  }
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.portfolio-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* 헤더 스타일 */
+.portfolio-header {
+  margin-bottom: 40px;
+}
+
+.portfolio-title {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.portfolio-subtitle {
+  font-size: 16px;
+  color: #555555;
+  margin-top: 10px;
+}
+
+/* 이미지 갤러리 스타일 */
+.portfolio-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-card {
+  width: calc(33.33% - 20px);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-image {
+  width: 100%; /* 컨테이너 너비에 맞춤 */
+  height: 100%; /* 컨테이너 높이에 맞춤 */
+  object-fit: cover; /* 이미지가 컨테이너를 꽉 채우도록 설정 */
+  border-radius: 10px; /* 둥근 모서리 유지 */
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.1);
+}
+
+.portfolio-card-caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 14px;
+}
