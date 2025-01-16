@@ -77,3 +77,20 @@ function createContact() {
       alert("An error occurred while sending your message. Please try again.");
     });
 }
+
+// 스크롤 애니메이션
+$(document).ready(function() {  
+  $(window).on('scroll', function() {  
+      // 각 섹션을 순회  
+      $('.section').each(function() {  
+          var scrollPos = $(window).scrollTop();  
+          var sectionOffset = $(this).offset().top;  
+          var sectionHeight = $(this).outerHeight();  
+
+          // 현재 스크롤 위치가 섹션에 도달했는지 확인  
+          if (scrollPos >= (sectionOffset - sectionHeight / 1.2)) {  
+              $(this).addClass('visible'); // 클래스 추가하여 애니메이션 실행  
+          }  
+      });  
+  });  
+});

@@ -1,14 +1,23 @@
 <%-include('layouts/header.ejs')%>
 
-<%-include('sections/intro.ejs')%>  
+<section id="intro" class="section">  
+    <%-include('sections/intro.ejs')%>  
+</section>  
 
-<%-include('sections/portfolio.ejs')%>
-  
-<%-include('sections/status.ejs')%>
-    
-<%-include('sections/photo.ejs')%>
+<section id="portfolio" class="section">  
+    <%-include('sections/portfolio.ejs')%>  
+</section>  
 
-<%-include('sections/contact.ejs')%>
+<section id="status" class="section">  
+    <%-include('sections/status.ejs')%>  
+</section>  
+
+<section id="photo" class="section">  
+    <%-include('sections/photo.ejs')%>  
+</section>  
+
+ <%-include('sections/contact.ejs')%>  
+
 
 <!-- Back to Top 버튼 -->  
 <a href="#intro" id="back-to-top">↑</a>  
