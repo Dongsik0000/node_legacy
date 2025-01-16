@@ -1,6 +1,5 @@
 <%-include('layouts/header.ejs')%>  
 
-<div id="fullpage">
   <!-- INTRO Section -->  
   <div id="intro" class="container-fluid intro-section">  
     <div class="row">  
@@ -85,9 +84,8 @@
       margin-bottom: 20px;  
     }  
   </style>
-</div>
 
-<div id="fullpage">
+
   <!--portfolio section-->  
   <div id="portfolio" class="container-fluid portfolio-section">  
     <!-- 헤더 -->  
@@ -122,7 +120,6 @@
   </div>  
 </div>
 
-<div id="fullpage">
   <!-- Status Section -->  
   <section id="status" class="status-section container-fluid">  
     <div class="status-header">  
@@ -154,9 +151,8 @@
       </div>  
     </div>  
   </section>  
-</div>
 
-<div id="fullpage">
+
     <!-- Photo Section -->  
     <div id="photo" class="container-fluid text-center bg-light">  
       <h2>Photo Section</h2><br>  
@@ -238,42 +234,46 @@
     </style>
 </div>  
 
-<div id="fullpage">
-    <!-- Contact Section -->  
-    <div id="contact" class="container-fluid bg-grey">   
-        <h2 class="text-center">CONTACT</h2>  
+<!-- Contact Section -->  
+<div id="contact" class="container-fluid bg-grey">   
+  <h2 class="text-center">CONTACT</h2>  
+  <div class="row">  
+    <div class="col-sm-5">  
+      <p>Contact down below and I'll get back to you soon.</p>  
+      <p><span class="glyphicon glyphicon-map-marker"></span> Sunchang, Jeollabuk-do</p>  
+      <p><span class="glyphicon glyphicon-phone"></span> +082 10-6693-3902</p>  
+      <p><span class="glyphicon glyphicon-envelope"></span> panda1842@naver.com</p>  
+    </div>  
+    <div class="col-sm-7 slideanim">  
+      <form id="contactForm">  
         <div class="row">  
-          <div class="col-sm-5">  
-            <p>Contact down below and I'll get back to you soon.</p>  
-            <p><span class="glyphicon glyphicon-map-marker"></span> Sunchang, Jeollabuk-do</p>  
-            <p><span class="glyphicon glyphicon-phone"></span> +082 10-6693-3902</p>  
-            <p><span class="glyphicon glyphicon-envelope"></span> panda1842@naver.com</p>  
+          <div class="col-sm-6 form-group">  
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>  
           </div>  
-          <div class="col-sm-7 slideanim">  
-            <form id="contactForm">  
-              <div class="row">  
-                <div class="col-sm-6 form-group">  
-                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>  
-                </div>  
-                <div class="col-sm-6 form-group">  
-                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>  
-                </div>  
-                <div class="col-sm-6 form-group">  
-                  <input class="form-control" id="phone" name="phone" placeholder="PhoneNumber(Optional)" type="tel">  
-                </div>  
-              </div>  
-              <textarea class="form-control" id="comments" name="memo" placeholder="Comment any notes.." rows="5"></textarea><br>  
-              <div class="row">  
-                <div class="col-sm-12 form-group">  
-                   <button class="btn btn-default pull-right" type="button" onclick="createContact()">Send</button>  
-                </div>  
-              </div>  
-            </form>  
+          <div class="col-sm-6 form-group">  
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>  
+          </div>  
+          <div class="col-sm-6 form-group">  
+            <input class="form-control" id="phone" name="phone" placeholder="PhoneNumber(Optional)" type="tel">  
           </div>  
         </div>  
-      </div>
-    </div>
+        <textarea class="form-control" id="comments" name="memo" placeholder="Comment any notes.." rows="5"></textarea><br>  
+        <div class="row">  
+          <div class="col-sm-12 form-group">  
+             <button class="btn btn-default pull-right" type="button" onclick="createContact()">Send</button>  
+          </div>  
+        </div>  
+      </form>  
+    </div>  
+  </div>  
 </div>
+</div>
+
+<!-- Back to Top 버튼 -->  
+<a href="#intro" id="back-to-top">↑</a>  
+
+<!-- 다크 모드 버튼 -->  
+<button id="dark-mode-toggle">Switch to Dark Mode</button>
 
 <%-include('layouts/footer.ejs')%>
 

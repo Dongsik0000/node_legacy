@@ -200,5 +200,58 @@ body {
   height: auto; /* 비율을 유지하면서 자동 높이 */  
   margin: 0 auto; /* 중앙 정렬 */  
   display: block; /* 블록 요소 */  
+}
+
+/* ======== BACK TO TOP BUTTON ======== */  
+#back-to-top {  
+  display: none; /* 처음에는 숨김 */  
+  position: fixed;  
+  bottom: 20px; /* 페이지 하단 */  
+  right: 20px; /* 우측 여백 */  
+  z-index: 1000;  
+  padding: 10px 15px;  
+  border-radius: 50%;  
+  background-color: #333;  
+  color: white;  
+  cursor: pointer;  
+  font-size: 18px;  
+  text-align: center;  
+  opacity: 0.8;  
+  transition: background-color 0.3s ease;  
 }  
 
+#back-to-top:hover {  
+  background-color: #555;  
+}  
+
+/* ======== DARK MODE BUTTON ======== */  
+#dark-mode-toggle {  
+  position: fixed;  
+  top: 20px;  
+  right: 20px;  
+  background-color: #333;  
+  color: #fff;  
+  border: none;  
+  border-radius: 5px;  
+  padding: 10px 15px;  
+  font-size: 14px;  
+  font-weight: bold;  
+  cursor: pointer;  
+  z-index: 1000;  
+}  
+
+[data-theme="dark"] {  
+  --bg-color: #333333;  
+  --text-color: #ffffff;  
+}  
+
+[data-theme="light"] {  
+  --bg-color: #ffffff;  
+  --text-color: #333333;  
+}  
+
+body {  
+  background-color: var(--bg-color);  
+  color: var(--text-color);  
+  transition: background-color 0.3s ease, color 0.3s ease;  
+}   
